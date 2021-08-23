@@ -4,6 +4,7 @@ import User from "./User";
 import Registration from "./Registration";
 import { useState } from "react";
 import Users from "./Users";
+import CountV2 from "./CountV2";
 
 function App() {
   const [showUser, setShowUser] = useState(false);
@@ -16,7 +17,8 @@ function App() {
       {showUser && <User />}
 
       <Registration /> */}
-      <Users />
+      {/* <Users /> */}
+      <CountV2 />
     </div>
   );
 }
