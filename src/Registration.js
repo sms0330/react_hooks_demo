@@ -16,7 +16,7 @@ const Registration = () => {
 
   const registerLocal = (event) => {
     event.preventDefault();
-    setInterval(() => {
+    setTimeout(() => {
       register(user);
       setUser({ email: "", password: "" });
     }, 2000);
