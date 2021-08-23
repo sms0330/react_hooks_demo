@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useState, useRef } from "react";
-const Quote = () => {
+const Users = () => {
   const usersRef = useRef(null);
   const [users, setUsers] = useState([]);
 
@@ -35,4 +35,4 @@ const Quote = () => {
   );
 };
 
-export default Quote;
+export default Users;

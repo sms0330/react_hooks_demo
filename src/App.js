@@ -3,7 +3,7 @@ import Count from "./Count";
 import User from "./User";
 import Registration from "./Registration";
 import { useState } from "react";
-import Quote from "./Quote";
+import Users from "./Users";
 
 function App() {
   const [showUser, setShowUser] = useState(false);
@@ -16,7 +16,7 @@ function App() {
       {showUser && <User />}
 
       <Registration /> */}
-      <Quote />
+      <Users />
     </div>
   );
 }
