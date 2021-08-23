@@ -6,6 +6,10 @@ import { useState } from "react";
 import Users from "./Users";
 import CountV2 from "./CountV2";
 import CountV3 from "./CountV3";
+import Profile from "./Profile";
+import { UserProvider } from "./providers/UserProvider";
+import Login from "./Login";
+import Logout from "./Logout";
 
 function App() {
   const [showUser, setShowUser] = useState(false);
@@ -20,7 +24,13 @@ function App() {
       <Registration /> */}
       {/* <Users /> */}
       {/* <CountV2 /> */}
-      <CountV3 />
+      {/* <CountV3 /> */}
+
+      <UserProvider>
+        <Login />
+        <Logout />
+        <Profile />
+      </UserProvider>
     </div>
   );
 }
