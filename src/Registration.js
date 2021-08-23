@@ -1,7 +1,7 @@
-import { useRef, useEffect, useState } from "react";
+import { useState } from "react";
+import { register } from "./utils/register";
 
 const Registration = () => {
-  const inputRef = useRef();
   const [user, setUser] = useState({ email: "", password: "" });
 
   const updateForm = (event) => {
@@ -14,49 +14,46 @@ const Registration = () => {
     });
   };
 
-  // This is not a good solution
-  //   const updateEmail = (newEmailValue) => {
-  //     setUser((u) => {
-  //       return { ...u, email: newEmailValue };
-  //     });
-  //   };
+  const registerLocal = (event) => {
+    event.preventDefault();
+    setInterval(() => {
+      register(user);
+      setUser({ email: "", password: "" });
+    }, 2000);
 
-  //   This will be called just once
-  useEffect(() => {
-    //We can get reference to our input by using useRef hook
-    inputRef.current.focus();
-    console.log(
-      "Dimensions of our input are ",
-      inputRef.current.getBoundingClientRect()
-    );
-  }, []);
+    // setUser({ email: "", password: "" });
+  };
+
   return (
     <>
-      <p>This is registration form</p>
-      <span>Email:</span>
-      <input
-        value={user.email}
-        name="email"
-        onChange={(e) => {
-          updateForm(e);
-        }}
-        type="email"
-        placeholder="Please enter an email"
-        ref={inputRef}
-      />
+      <form onSubmit={(event) => registerLocal(event)}>
+        <p>This is registration form</p>
+        <span>Email:</span>
+        <input
+          value={user.email}
+          name="email"
+          onChange={(e) => {
+            updateForm(e);
+          }}
+          type="email"
+          placeholder="Please enter an email"
+        />
 
-      <br />
+        <br />
 
-      <span>password:</span>
-      <input
-        value={user.password}
-        name="password"
-        onChange={(e) => {
-          updateForm(e);
-        }}
-        type="password"
-        placeholder="Please enter password"
-      />
+        <span>password:</span>
+        <input
+          value={user.password}
+          name="password"
+          onChange={(e) => {
+            updateForm(e);
+          }}
+          type="password"
+          placeholder="Please enter password"
+        />
+
+        <button type="submit">Register</button>
+      </form>
 
       <pre>{JSON.stringify(user, null, 2)}</pre>
     </>

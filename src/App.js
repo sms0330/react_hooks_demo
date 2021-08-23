@@ -20,17 +20,17 @@ function App() {
         toggle user
       </button>
       {showUser && <User />}
-
-      <Registration /> */}
+*/}
+      <Registration />
       {/* <Users /> */}
       {/* <CountV2 /> */}
       {/* <CountV3 /> */}
 
-      <UserProvider>
+      {/* <UserProvider>
         <Login />
         <Logout />
         <Profile />
-      </UserProvider>
+      </UserProvider> */}
     </div>
   );
 }
