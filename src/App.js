@@ -1,7 +1,7 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Count from "./Count";
 import User from "./User";
+import Registration from "./Registration";
 import { useState } from "react";
 
 function App() {
@@ -13,6 +13,8 @@ function App() {
         toggle user
       </button>
       {showUser && <User />}
+
+      <Registration />
     </div>
   );
 }
